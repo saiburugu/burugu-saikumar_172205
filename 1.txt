@@ -1,0 +1,83 @@
+package util.bank;
+
+public class SavingsAccount implements Comparable<SavingsAccount>
+
+{
+    
+	 private double ac_balance;
+	 private int id;
+	 private String accholdername;
+	 private boolean isSalaryAccount;
+	public SavingsAccount(double ac_balance, int id, String accholdername, boolean isSalaryAccount) {
+		super();
+		this.ac_balance = ac_balance;
+		this.id = id;
+		this.accholdername = accholdername;
+		this.isSalaryAccount = isSalaryAccount;
+	}
+	public double getAc_balance() {
+		return ac_balance;
+	}
+	public void setAc_balance(double ac_balance) {
+		this.ac_balance = ac_balance;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getAccholdername() {
+		return accholdername;
+	}
+	public void setAccholdername(String accholdername) {
+		this.accholdername = accholdername;
+	}
+	public boolean isSalaryAccount() {
+		return isSalaryAccount;
+	}
+	public void setSalaryAccount(boolean isSalaryAccount) {
+		this.isSalaryAccount = isSalaryAccount;
+	}
+	
+	
+	public double withdraw(double amount)
+	{
+		if(amount<getAc_balance())
+		{
+			amount=amount-getAc_balance();
+		}
+		else
+		{
+			System.out.println("amount exceeded balance");
+		}
+		return getAc_balance();
+	}
+	public double deposit(double amount)
+	{
+		ac_balance=amount+getAc_balance();
+		return getAc_balance();
+	}
+	
+
+	@Override
+	public String toString() {
+		return "SavingsAccount [ac_balance=" + ac_balance + ", id=" + id + ", accholdername=" + accholdername
+				+ ", isSalaryAccount=" + isSalaryAccount + "]";
+	}
+	@Override
+	public int compareTo(SavingsAccount arg0) {
+		if(id>arg0.getId())
+			return 1;
+			if(id<arg0.getId())
+			return -1;
+			return 0;
+	}
+	
+	
+		
+	}
+
+
+
+

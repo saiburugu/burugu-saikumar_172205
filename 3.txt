@@ -1,0 +1,39 @@
+package util.bank.test;
+
+import java.util.TreeSet;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+import util.bank.BankAccount;
+import util.bank.SavingsAccount;
+
+public class BankAccountTest {
+	public static class MainClass {
+		public static void main(String[] args) {
+			BankAccount b = new BankAccount();
+
+			SavingsAccount a1 = new SavingsAccount(10000, 999, "saikumar", true);
+			SavingsAccount a2 = new SavingsAccount(1000, 888, "amarnath", true);
+			SavingsAccount a3 = new SavingsAccount(15000, 333, "srikanth", true);
+			SavingsAccount a4 = new SavingsAccount(17000, 444, "meharaj", true);
+			SavingsAccount a5 = new SavingsAccount(19000, 555, "krishna", true);
+			SavingsAccount a6 = new SavingsAccount(17000, 111, "suresh", true);
+			a1.deposit(90000);
+			a2.withdraw(100000);
+			b.addaccount(a1);
+			b.addaccount(a2);
+			b.addaccount(a3);
+			b.addaccount(a4);
+			b.addaccount(a5);
+			b.addaccount(a6);
+			TreeSet<SavingsAccount> account = b.getAccounts();
+			java.util.Iterator<SavingsAccount> it = account.iterator();
+
+			while (it.hasNext()) {
+				System.out.println(it.next());
+			}
+
+		}
+	}
+
+}

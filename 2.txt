@@ -1,0 +1,24 @@
+package util.bank;
+import java.util.Set;
+import java.util.TreeSet;
+public class BankAccount {
+	
+	 TreeSet<SavingsAccount> accounts;
+	 public BankAccount()
+	 {
+		 accounts=new TreeSet<SavingsAccount>();
+	 }
+	 public void addaccount(SavingsAccount account)
+	 {
+		 accounts.add(account);
+		 
+	 }
+	 public void removeaccount(SavingsAccount account)
+	 {
+		 accounts.remove(account);
+		 
+	 }
+	 public TreeSet<SavingsAccount> getAccounts(){
+		 return accounts;
+	 }
+	}
